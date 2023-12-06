@@ -1,0 +1,22 @@
+{
+  "meta": {
+    "createdAt": 1701862102313
+  },
+  "data": [
+    {
+      "day": 1,
+      "title": "Trebuchet?!",
+      "file": "1.json"
+    },
+    {
+      "day": 2,
+      "title": "Cube Conundrum",
+      "file": "2.json"
+    },
+    {
+      "day": 4,
+      "title": "Scratchcards",
+      "file": "4.json"
+    }
+  ]
+}
