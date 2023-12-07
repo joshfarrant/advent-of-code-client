@@ -25,7 +25,7 @@ export const Day = ({
             <span className="text-gradient font-bold">{title}</span>
           </h2>
           <div
-            className="prose prose-zinc my-4 prose-headings:bg-gradient-to-br prose-headings:from-primary-400 prose-headings:to-secondary-600 prose-headings:bg-clip-text prose-headings:font-bold prose-headings:text-transparent prose-em:bg-gradient-to-br prose-em:from-primary-400 prose-em:to-secondary-600 prose-em:bg-clip-text prose-em:font-semibold prose-em:not-italic prose-em:text-transparent"
+            className="prose prose-gray my-4 prose-headings:bg-gradient-to-br prose-headings:from-primary-400 prose-headings:to-secondary-600 prose-headings:bg-clip-text prose-headings:font-bold prose-headings:text-transparent prose-em:bg-gradient-to-br prose-em:from-primary-400 prose-em:to-secondary-600 prose-em:bg-clip-text prose-em:font-semibold prose-em:not-italic prose-em:text-transparent"
             dangerouslySetInnerHTML={{ __html: descriptionHtml }}
           />
         </div>
@@ -35,22 +35,24 @@ export const Day = ({
             className="mt-8 flex h-full flex-col self-start drop-shadow-md lg:mt-0"
           >
             <Tab.List className="ml-3 space-x-4 sm:ml-6">
-              {['Part 1', 'Part 2', 'Notes'].map((part, i) => (
-                <Tab as={Fragment} key={part}>
-                  {({ selected }) => (
-                    <button
-                      className={clsx(
-                        selected
-                          ? 'border-primary-500 bg-primary-500 text-gray-100'
-                          : 'border-primary-200 bg-primary-100 text-primary-800 hover:border-primary-500 hover:bg-primary-100 hover:text-primary-500',
-                        'relative top-1 min-w-0 rounded-t-lg border-4 px-3 py-2 text-center text-sm font-bold outline-none ring-purple-500 ring-offset-2 focus-visible:ring',
-                      )}
-                    >
-                      {part}
-                    </button>
-                  )}
-                </Tab>
-              ))}
+              {['Part 1 Solution', 'Part 2 Solution', 'Notes'].map(
+                (part, i) => (
+                  <Tab as={Fragment} key={part}>
+                    {({ selected }) => (
+                      <button
+                        className={clsx(
+                          selected
+                            ? 'border-primary-500 bg-primary-500 text-gray-100'
+                            : 'border-primary-200 bg-primary-100 text-primary-800 hover:border-primary-500 hover:bg-primary-100 hover:text-primary-500',
+                          'relative top-1 min-w-0 rounded-t-lg border-4 px-1 py-2 text-center text-xs font-bold outline-none ring-purple-500 ring-offset-2 focus-visible:ring sm:px-3 sm:text-sm',
+                        )}
+                      >
+                        {part}
+                      </button>
+                    )}
+                  </Tab>
+                ),
+              )}
             </Tab.List>
             <div className="relative z-10 overflow-y-hidden rounded-xl bg-gradient-to-br from-primary-500 to-secondary-500 p-2">
               <Tab.Panels className="max-h-full overflow-y-auto rounded-xl bg-gray-800 px-4 py-5 sm:p-5">
@@ -62,7 +64,7 @@ export const Day = ({
                 </Tab.Panel>
                 <Tab.Panel>
                   <div
-                    className="prose prose-zinc prose-invert my-4 prose-em:bg-gradient-to-br prose-em:from-primary-400 prose-em:to-secondary-600 prose-em:bg-clip-text prose-em:font-semibold prose-em:not-italic prose-em:text-transparent"
+                    className="prose prose-gray prose-invert my-4 prose-em:bg-gradient-to-br prose-em:from-primary-400 prose-em:to-secondary-600 prose-em:bg-clip-text prose-em:font-semibold prose-em:not-italic prose-em:text-transparent"
                     dangerouslySetInnerHTML={{ __html: notesHtml }}
                   />
                 </Tab.Panel>

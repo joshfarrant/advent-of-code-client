@@ -2,7 +2,6 @@ import { Props } from './days.types';
 import { Layout } from '@/components/templates/layout';
 import Link from 'next/link';
 import clsx from 'clsx';
-// import { LockClosedIcon } from '@heroicons/react/24/outline';
 import { StarIcon, LockClosedIcon } from '@heroicons/react/24/solid';
 
 const emptyDays = Array.from({ length: 25 });
@@ -11,7 +10,20 @@ export const Days = ({ days }: Props) => {
   return (
     <Layout>
       <div className="flex w-full max-w-[42rem] flex-col lg:max-w-[99rem]">
-        <ul className="grid grid-cols-2 gap-8 py-8 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-7">
+        <p className="mt-2 max-w-2xl text-xl text-gray-900">
+          Pick a day to view my solutions to an{' '}
+          <a
+            href="https://adventofcode.com/2023"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gradient font-semibold"
+          >
+            Advent of Code 2023
+          </a>{' '}
+          puzzle.
+        </p>
+
+        <ul className="grid grid-cols-2 gap-8 pb-8 pt-6 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-7">
           {emptyDays.map((_, i) => {
             const dayNumber = i + 1;
             const hasDay = days.findIndex(d => d.day === dayNumber) > -1;
