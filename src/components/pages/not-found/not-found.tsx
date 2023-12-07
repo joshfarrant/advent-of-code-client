@@ -16,11 +16,11 @@ import Link from 'next/link';
 export const NotFound = () => {
   return (
     <Layout>
-      <div className="flex flex-col justify-center items-center w-full max-w-[42rem] lg:max-w-[99rem]">
-        <h2 className="mt-16 text-8xl font-black text-gradient">404</h2>
+      <div className="flex w-full max-w-[42rem] flex-col items-center justify-center lg:max-w-[99rem]">
+        <h2 className="text-gradient mt-16 text-8xl font-black">404</h2>
         <Link
           href="/2023/days"
-          className="text-4xl font-black text-white mt-8 px-6 py-4 rounded-xl bg-gradient-to-br from-primary-400 to-secondary-600 border-4 border-primary-300"
+          className="mt-8 rounded-xl border-4 border-primary-300 bg-gradient-to-br from-primary-400 to-secondary-600 px-6 py-4 text-4xl font-black text-white"
         >
           I want you back
         </Link>

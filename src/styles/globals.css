@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 .text-gradient {
-  @apply text-transparent bg-clip-text bg-gradient-to-br from-primary-400 to-secondary-600;
+  @apply bg-gradient-to-br from-primary-400 to-secondary-600 bg-clip-text text-transparent;
 }
 
 .text-gradient-light {
-  @apply text-transparent bg-clip-text bg-gradient-to-tr from-primary-100 to-secondary-100;
+  @apply bg-gradient-to-tr from-primary-100 to-secondary-100 bg-clip-text text-transparent;
 }
 
 .text-gradient-green {
-  @apply text-transparent bg-clip-text bg-gradient-to-br from-lime-400 to-green-500;
+  @apply bg-gradient-to-br from-lime-400 to-green-500 bg-clip-text text-transparent;
 }

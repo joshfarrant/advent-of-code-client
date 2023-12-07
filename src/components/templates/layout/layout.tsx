@@ -3,19 +3,19 @@ import { Props } from './layout.types';
 
 export const Layout = ({ children }: Props) => {
   return (
-    <div className="pb-0 sm:pb-8 px-0 lg:px-8 selection:bg-primary-500 selection:text-white">
-      <nav className="z-20 sticky lg:static sm:pt-4 lg:pt-8 top-0 bg-white w-full max-w-[42rem] lg:max-w-[99rem] mx-auto mb-3 sm:mb-5">
-        <div className="flex flex-row justify-between items-center pt-2 sm:pt-0 mb-2 sm:mb-4 px-3 lg:px-4 text-gradient">
-          <div className="flex flex-col lg:flex-row items-start lg:items-center sm:text-3xl mr-8 text-xl tracking-tight">
+    <div className="px-0 pb-0 selection:bg-primary-500 selection:text-white sm:pb-8 lg:px-8">
+      <nav className="sticky top-0 z-20 mx-auto mb-3 w-full max-w-[42rem] bg-white sm:mb-5 sm:pt-4 lg:static lg:max-w-[99rem] lg:pt-8">
+        <div className="text-gradient mb-2 flex flex-row items-center justify-between px-3 pt-2 sm:mb-4 sm:pt-0 lg:px-4">
+          <div className="mr-8 flex flex-col items-start text-xl tracking-tight sm:text-3xl lg:flex-row lg:items-center">
             <h1>
               <Link
                 href="/2023/days"
-                className="font-medium hover:bg-secondary-600 bg-clip-text"
+                className="bg-clip-text font-medium hover:bg-secondary-600"
               >
                 Josh Farrant
               </Link>
             </h1>
-            <span className="hidden lg:inline-block mx-3 font-thin text-4xl">
+            <span className="mx-3 hidden text-4xl font-thin lg:inline-block">
               /
             </span>
 
@@ -24,24 +24,24 @@ export const Layout = ({ children }: Props) => {
                 href="https://https://adventofcode.com/2023"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-md sm:text-xl md:text-3xl font-light opacity-90 hover:bg-secondary-600 bg-clip-text"
+                className="text-md bg-clip-text font-light opacity-90 hover:bg-secondary-600 sm:text-xl md:text-3xl"
               >
                 Advent of Code <span className="hidden sm:inline">2023</span>
               </a>
             </h2>
           </div>
-          <div className="flex flex-row font-semibold text-md sm:text-lg space-x-3 sm:space-x-5 tracking-tight">
+          <div className="text-md flex flex-row space-x-3 font-semibold tracking-tight sm:space-x-5 sm:text-lg">
             <Link
-              className="hover:bg-primary-400 bg-clip-text"
+              className="bg-clip-text hover:bg-primary-400"
               href="/2023/days"
             >
               All days
             </Link>
-            <Link className="hover:bg-primary-400 bg-clip-text" href="/about">
+            <Link className="bg-clip-text hover:bg-primary-400" href="/about">
               About
             </Link>
             <a
-              className="hover:bg-primary-400 bg-clip-text"
+              className="bg-clip-text hover:bg-primary-400"
               href="https://farrant.me/posts"
               target="_blank"
               rel="noopener noreferrer"
@@ -50,9 +50,9 @@ export const Layout = ({ children }: Props) => {
             </a>
           </div>
         </div>
-        <div className="max-w-full max-w-screen h-1 rounded-full bg-gradient-to-br from-primary-400 to-secondary-600"></div>
+        <div className="max-w-screen h-1 max-w-full rounded-full bg-gradient-to-br from-primary-400 to-secondary-600"></div>
       </nav>
-      <main className="px-2 lg:px-0 max-w-screen max-h-full flex flex-col items-center">
+      <main className="max-w-screen flex max-h-full flex-col items-center px-2 lg:px-0">
         {children}
       </main>
     </div>

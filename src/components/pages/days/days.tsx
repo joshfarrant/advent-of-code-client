@@ -10,8 +10,8 @@ const emptyDays = Array.from({ length: 25 });
 export const Days = ({ days }: Props) => {
   return (
     <Layout>
-      <div className="flex flex-col w-full max-w-[42rem] lg:max-w-[99rem]">
-        <ul className="grid gap-8 py-8 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-7">
+      <div className="flex w-full max-w-[42rem] flex-col lg:max-w-[99rem]">
+        <ul className="grid grid-cols-2 gap-8 py-8 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-7">
           {emptyDays.map((_, i) => {
             const dayNumber = i + 1;
             const hasDay = days.findIndex(d => d.day === dayNumber) > -1;
@@ -23,19 +23,19 @@ export const Days = ({ days }: Props) => {
                   hasDay
                     ? 'cursor-pointer bg-gradient-to-br from-primary-400 to-secondary-600'
                     : 'cursor-not-allowed bg-gradient-to-br from-primary-100 to-secondary-200',
-                  'flex items-center justify-center shadow rounded-md relative aspect-square focus-within:bg-blue-500',
+                  'relative flex aspect-square items-center justify-center rounded-md shadow focus-within:bg-blue-500',
                 )}
               >
                 {hasDay ? (
                   <Link
                     href={`/2023/days/${dayNumber}`}
-                    className="text-8xl font-black text-gradient-light opacity-80 text-center"
+                    className="text-gradient-light text-center text-8xl font-black opacity-80"
                     tabIndex={0}
                   >
                     {dayNumber.toString().padStart(2, '0')}
                   </Link>
                 ) : (
-                  <span className="text-8xl font-black text-gradient opacity-80 text-center">
+                  <span className="text-gradient text-center text-8xl font-black opacity-80">
                     {dayNumber.toString().padStart(2, '0')}
                   </span>
                 )}
@@ -45,7 +45,7 @@ export const Days = ({ days }: Props) => {
                     <StarIcon className="h-6 w-6 text-yellow-300" />
                   </div>
                 ) : (
-                  <LockClosedIcon className="h-6 w-6 text-primary-600 absolute bottom-2 right-2" />
+                  <LockClosedIcon className="absolute bottom-2 right-2 h-6 w-6 text-primary-600" />
                 )}
               </li>
             );

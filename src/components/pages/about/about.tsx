@@ -3,9 +3,9 @@ import { Layout } from '@/components/templates/layout';
 export const About = () => {
   return (
     <Layout>
-      <div className="flex flex-col justify-center items-center w-full max-w-[42rem] lg:max-w-[99rem]">
-        <h2 className="mt-16 mb-8 text-8xl font-black text-gradient">About</h2>
-        <div className="prose-lg sm:prose-xl prose-zinc max-w-2xl text-center">
+      <div className="flex w-full max-w-[42rem] flex-col items-center justify-center lg:max-w-[99rem]">
+        <h2 className="text-gradient mb-8 mt-16 text-8xl font-black">About</h2>
+        <div className="prose-lg prose-zinc max-w-2xl text-center sm:prose-xl">
           <p>
             This is a little site I created to share my solutions to the Advent
             of Code 2023 challenges, and hopefully help me commit to completing
