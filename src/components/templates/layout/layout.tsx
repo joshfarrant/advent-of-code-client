@@ -21,7 +21,7 @@ export const Layout = ({ children }: Props) => {
 
             <h2>
               <a
-                href="https://https://adventofcode.com/2023"
+                href="https://adventofcode.com/2023"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-md bg-clip-text font-light hover:bg-secondary-600 sm:text-xl md:text-3xl"
