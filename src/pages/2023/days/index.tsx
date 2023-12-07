@@ -1,15 +1,18 @@
 import type { InferGetStaticPropsType, GetStaticProps } from 'next';
-import { Day } from '@/types/puzzle';
 import { getIndexData } from '@/utils/data';
+import { Days } from '@/components/pages/days';
 
 type Props = {
-  days: Day[];
+  days: { day: number; title: string }[];
 };
 
 export const getStaticProps = (async context => {
   const indexData = await getIndexData();
 
-  const days = indexData.data;
+  const days = indexData.data.map(day => ({
+    day: day.day,
+    title: day.title,
+  }));
 
   return { props: { days } };
 }) satisfies GetStaticProps<Props>;
@@ -17,16 +20,5 @@ export const getStaticProps = (async context => {
 export default function Page({
   days,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  return (
-    <>
-      <h1>Days</h1>
-      <ul>
-        {days.map(day => (
-          <li key={day.day}>
-            <a href={`/2023/days/${day.day}`}>{day.title}</a>
-          </li>
-        ))}
-      </ul>
-    </>
-  );
+  return <Days days={days} />;
 }

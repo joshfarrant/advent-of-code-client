@@ -2,6 +2,7 @@ import type { Config } from 'tailwindcss';
 import colors from 'tailwindcss/colors';
 import forms from '@tailwindcss/forms';
 import typography from '@tailwindcss/typography';
+import aspectRatio from '@tailwindcss/aspect-ratio';
 
 const config: Config = {
   content: [
@@ -16,6 +17,9 @@ const config: Config = {
       primary: colors.pink,
       secondary: colors.orange,
     },
+    aspectRatio: {
+      square: '1 / 1',
+    },
     extend: {
       typography: {
         DEFAULT: {
@@ -24,6 +28,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [forms, typography],
+  plugins: [forms, typography, aspectRatio],
 };
 export default config;

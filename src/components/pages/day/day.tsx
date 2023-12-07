@@ -23,6 +23,7 @@ export const Day = ({
           <Link
             href="/2023/days"
             className="flex font-semibold items-center text-primary-800"
+            prefetch
           >
             <ChevronLeftIcon className="h-5" /> All days
           </Link>
