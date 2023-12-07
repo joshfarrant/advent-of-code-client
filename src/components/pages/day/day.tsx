@@ -18,7 +18,7 @@ export const Day = ({
 }: Props) => {
   return (
     <Layout>
-      <div className="grid grid-cols-1 h-full lg:gap-6 lg:grid-cols-[minmax(25rem,_42rem)_minmax(25rem,_53rem)] xl:gap-8 2xl:gap-16">
+      <div className="grid grid-cols-1 mt-4 sm:mt-6 h-full lg:gap-6 lg:grid-cols-[minmax(25rem,_42rem)_minmax(25rem,_53rem)] xl:gap-8 2xl:gap-16">
         <div className="max-w-full justify-self-center lg:justify-self-auto pb-4 lg:pb-0 border-b-4 lg:border-0 border-primary-500 border-dotted">
           <h2 className="mb-2 text-2xl sm:text-4xl space-x-2 sm:space-x-4 text-gray-900 tracking-tight">
             <span className="font-light">Day {day}</span>
