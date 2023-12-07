@@ -41,15 +41,17 @@ export const Days = ({ days }: Props) => {
                 {hasDay ? (
                   <Link
                     href={`/2023/days/${dayNumber}`}
-                    className="text-gradient-light text-center text-8xl font-black opacity-80"
+                    className="text-gradient-light h-full w-full opacity-80"
                     tabIndex={0}
                   >
-                    {dayNumber.toString().padStart(2, '0')}
+                    <div className="flex h-full w-full items-center justify-center text-center text-8xl font-black">
+                      {dayNumber.toString().padStart(2, '0')}
+                    </div>
                   </Link>
                 ) : (
-                  <span className="text-gradient text-center text-8xl font-black opacity-80">
+                  <div className="text-gradient text-center text-8xl font-black opacity-80">
                     {dayNumber.toString().padStart(2, '0')}
-                  </span>
+                  </div>
                 )}
                 {hasDay ? (
                   <div className="absolute bottom-2 left-2 flex gap-2">
