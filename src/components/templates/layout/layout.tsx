@@ -24,7 +24,7 @@ export const Layout = ({ children }: Props) => {
                 href="https://https://adventofcode.com/2023"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-md bg-clip-text font-light opacity-90 hover:bg-secondary-600 sm:text-xl md:text-3xl"
+                className="text-md bg-clip-text font-light hover:bg-secondary-600 sm:text-xl md:text-3xl"
               >
                 Advent of Code <span className="hidden sm:inline">2023</span>
               </a>
