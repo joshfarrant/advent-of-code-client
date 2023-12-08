@@ -11,7 +11,7 @@ export const Days = ({ days }: Props) => {
   return (
     <>
       <NextSeo
-        title="Calendar"
+        title="Advent Calendar"
         description="View my solutions to Advent of Code 2023 puzzles."
         canonical="https://advent-of-code.farrant.me/2023/days"
       />
