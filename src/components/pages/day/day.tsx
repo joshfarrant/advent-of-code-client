@@ -41,24 +41,26 @@ export const Day = ({
               className="mt-8 flex h-full flex-col self-start drop-shadow-md lg:mt-0"
             >
               <Tab.List className="ml-3 space-x-4 sm:ml-6">
-                {['Part 1 Solution', 'Part 2 Solution', 'Notes'].map(
-                  (part, i) => (
-                    <Tab as={Fragment} key={part}>
-                      {({ selected }) => (
-                        <button
-                          className={clsx(
-                            selected
-                              ? 'border-primary-500 bg-primary-500 text-gray-100'
-                              : 'border-primary-200 bg-primary-100 text-primary-800 hover:border-primary-500 hover:bg-primary-100 hover:text-primary-500',
-                            'relative top-1 min-w-0 rounded-t-lg border-4 px-1 py-2 text-center text-xs font-bold outline-none ring-purple-500 ring-offset-2 focus-visible:ring sm:px-3 sm:text-sm',
-                          )}
-                        >
-                          {part}
-                        </button>
-                      )}
-                    </Tab>
-                  ),
-                )}
+                {['Part 1 Solution', 'Part 2 Solution', 'Notes'].map(part => (
+                  <Tab
+                    as={Fragment}
+                    key={part}
+                    data-cabin-event={`View ${part}`}
+                  >
+                    {({ selected }) => (
+                      <button
+                        className={clsx(
+                          selected
+                            ? 'border-primary-500 bg-primary-500 text-gray-100'
+                            : 'border-primary-200 bg-primary-100 text-primary-800 hover:border-primary-500 hover:bg-primary-100 hover:text-primary-500',
+                          'relative top-1 min-w-0 rounded-t-lg border-4 px-1 py-2 text-center text-xs font-bold outline-none ring-purple-500 ring-offset-2 focus-visible:ring sm:px-3 sm:text-sm',
+                        )}
+                      >
+                        {part}
+                      </button>
+                    )}
+                  </Tab>
+                ))}
               </Tab.List>
               <div className="relative z-10 overflow-y-hidden rounded-xl bg-gradient-to-br from-primary-500 to-secondary-500 p-2">
                 <Tab.Panels className="max-h-full overflow-y-auto rounded-xl bg-gray-800 px-4 py-5 sm:p-5">
