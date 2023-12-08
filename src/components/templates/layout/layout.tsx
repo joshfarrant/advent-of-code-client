@@ -26,7 +26,7 @@ export const Layout = ({ children }: Props) => {
               className="bg-clip-text hover:bg-primary-400"
               href="/2023/days"
             >
-              All days
+              Advent Calendar
             </Link>
           </div>
         </div>
