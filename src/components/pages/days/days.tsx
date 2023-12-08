@@ -40,9 +40,9 @@ export const Days = ({ days }: Props) => {
                   key={i}
                   className={clsx(
                     hasDay
-                      ? 'cursor-pointer bg-gradient-to-br from-primary-400 to-secondary-600'
+                      ? 'cursor-pointer bg-gradient-to-br from-primary-400 to-secondary-600 hover:scale-105 hover:shadow-xl'
                       : 'cursor-not-allowed bg-gradient-to-br from-primary-100 to-secondary-200',
-                    'relative flex aspect-square items-center justify-center rounded-md shadow focus-within:bg-blue-500',
+                    'relative flex aspect-square items-center justify-center rounded-md shadow transition-all focus-within:bg-blue-500',
                   )}
                 >
                   {hasDay ? (
