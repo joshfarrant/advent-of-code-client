@@ -6,12 +6,11 @@ import { Layout } from '@/components/templates/layout';
 import { Fragment } from 'react';
 import clsx from 'clsx';
 import Link from 'next/link';
-import { ChevronLeftIcon } from '@heroicons/react/24/solid';
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/20/solid';
 
 export const Day = ({
   day,
   title,
-  descriptionHtml,
   notesHtml,
   part1Solution,
   part2Solution,
@@ -30,9 +29,20 @@ export const Day = ({
               <span className="font-light">Day {day}</span>
               <span className="text-gradient font-bold">{title}</span>
             </h2>
+            <a
+              href={`https://adventofcode.com/2023/day/${day}`}
+              className="mt-2 flex max-w-2xl items-center text-xl font-semibold text-gray-900 decoration-secondary-400 hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className="text-gradient">
+                View puzzle description on Advent of Code
+              </span>
+              <ArrowTopRightOnSquareIcon className="mt-0.5' ml-1 h-5 w-5 text-secondary-500" />
+            </a>
             <div
               className="prose prose-gray my-4 prose-headings:bg-gradient-to-br prose-headings:from-primary-400 prose-headings:to-secondary-600 prose-headings:bg-clip-text prose-headings:font-bold prose-headings:text-transparent prose-em:bg-gradient-to-br prose-em:from-primary-400 prose-em:to-secondary-600 prose-em:bg-clip-text prose-em:font-semibold prose-em:not-italic prose-em:text-transparent"
-              dangerouslySetInnerHTML={{ __html: descriptionHtml }}
+              dangerouslySetInnerHTML={{ __html: notesHtml }}
             />
           </div>
           <div className="static top-4 lg:sticky lg:max-h-[calc(100vh-2rem)] lg:overflow-y-hidden">
@@ -41,7 +51,7 @@ export const Day = ({
               className="mt-8 flex h-full flex-col self-start drop-shadow-md lg:mt-0"
             >
               <Tab.List className="ml-3 space-x-4 sm:ml-6">
-                {['Part 1 Solution', 'Part 2 Solution', 'Notes'].map(part => (
+                {['Part 1 Solution', 'Part 2 Solution'].map(part => (
                   <Tab
                     as={Fragment}
                     key={part}
@@ -69,12 +79,6 @@ export const Day = ({
                   </Tab.Panel>
                   <Tab.Panel>
                     <Code code={part2Solution} />
-                  </Tab.Panel>
-                  <Tab.Panel>
-                    <div
-                      className="prose prose-gray prose-invert my-4 prose-em:bg-gradient-to-br prose-em:from-primary-400 prose-em:to-secondary-600 prose-em:bg-clip-text prose-em:font-semibold prose-em:not-italic prose-em:text-transparent"
-                      dangerouslySetInnerHTML={{ __html: notesHtml }}
-                    />
                   </Tab.Panel>
                 </Tab.Panels>
               </div>

@@ -43,7 +43,6 @@ export type LightweightDay = {
   createdAt: number;
   day: number;
   title: string;
-  descriptionHtml: string;
   notesHtml: string;
   part1Solution: string;
   part2Solution: string;

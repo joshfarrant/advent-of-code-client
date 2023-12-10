@@ -31,7 +31,6 @@ export const getStaticProps = (async context => {
       createdAt: meta.createdAt,
       day: puzzle.day,
       title: puzzle.title,
-      descriptionHtml: html.description,
       notesHtml: html.notes,
       part1Solution: solutions.part1,
       part2Solution: solutions.part2,

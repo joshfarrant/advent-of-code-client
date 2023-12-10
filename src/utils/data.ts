@@ -16,13 +16,10 @@ export const getPuzzleData = async (day: string): Promise<PuzzleWithHtml> => {
   const puzzleData = await import(`@/json/${day}.json`);
   PuzzleSchema.parse(puzzleData);
 
-  const [descriptionHtml, notesHtml] = await Promise.all([
-    mdToHtml(puzzleData.puzzle.description),
-    mdToHtml(puzzleData.notes),
-  ]);
+  const notesHtml = await mdToHtml(puzzleData.notes);
 
   return {
     ...puzzleData,
-    html: { description: descriptionHtml, notes: notesHtml },
+    html: { notes: notesHtml },
   };
 };
