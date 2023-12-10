@@ -21,8 +21,6 @@ export const PuzzleSchema = z.object({
   puzzle: z.object({
     day: z.number(),
     title: z.string(),
-    description: z.string(),
-    input: z.string(),
   }),
   notes: z.string(),
   solutions: z.object({
