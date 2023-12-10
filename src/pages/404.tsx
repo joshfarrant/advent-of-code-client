@@ -1,5 +1,6 @@
-import { NotFound } from '@/components/pages/not-found';
 import { NextSeo } from 'next-seo';
+
+import { NotFound } from '@/components/pages/not-found';
 
 export default function Page() {
   return (

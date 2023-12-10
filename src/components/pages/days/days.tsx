@@ -1,9 +1,11 @@
-import { Props } from './days.types';
-import { Layout } from '@/components/templates/layout';
-import Link from 'next/link';
+import { LockClosedIcon, StarIcon } from '@heroicons/react/24/solid';
 import clsx from 'clsx';
-import { StarIcon, LockClosedIcon } from '@heroicons/react/24/solid';
+import Link from 'next/link';
 import { NextSeo } from 'next-seo';
+
+import { Layout } from '@/components/templates/layout';
+
+import { Props } from './days.types';
 
 const emptyDays = Array.from({ length: 25 });
 

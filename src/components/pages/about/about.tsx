@@ -1,5 +1,6 @@
-import { Layout } from '@/components/templates/layout';
 import { NextSeo } from 'next-seo';
+
+import { Layout } from '@/components/templates/layout';
 
 export const About = () => {
   return (

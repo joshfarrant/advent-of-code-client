@@ -1,5 +1,6 @@
-import { Layout } from '@/components/templates/layout';
 import Link from 'next/link';
+
+import { Layout } from '@/components/templates/layout';
 
 // const lyrics = [
 //   "Back in black, I hit the sack, I've been too long, I'm glad to be back.",

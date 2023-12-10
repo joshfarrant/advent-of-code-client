@@ -1,11 +1,12 @@
 import type {
-  InferGetStaticPropsType,
-  GetStaticProps,
   GetStaticPaths,
+  GetStaticProps,
+  InferGetStaticPropsType,
 } from 'next';
 import invariant from 'tiny-invariant';
-import { LightweightDay } from '@/types/puzzle';
+
 import { Day } from '@/components/pages/day';
+import { LightweightDay } from '@/types/puzzle';
 import { getIndexData, getPuzzleData } from '@/utils/data';
 
 export const getStaticPaths = (async () => {

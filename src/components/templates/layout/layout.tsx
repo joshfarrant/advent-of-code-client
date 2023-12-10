@@ -1,4 +1,5 @@
 import Link from 'next/link';
+
 import { Props } from './layout.types';
 
 export const Layout = ({ children }: Props) => {

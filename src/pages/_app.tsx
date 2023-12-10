@@ -1,6 +1,7 @@
-import '@/styles/globals.css';
-import { NextSeo } from 'next-seo';
 import type { AppProps } from 'next/app';
+import { NextSeo } from 'next-seo';
+
+import '@/styles/globals.css';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (

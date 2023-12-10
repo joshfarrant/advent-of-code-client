@@ -1,6 +1,7 @@
-import type { InferGetStaticPropsType, GetStaticProps } from 'next';
-import { getIndexData } from '@/utils/data';
+import type { GetStaticProps, InferGetStaticPropsType } from 'next';
+
 import { Days } from '@/components/pages/days';
+import { getIndexData } from '@/utils/data';
 
 type Props = {
   days: { day: number; title: string }[];

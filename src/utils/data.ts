@@ -4,6 +4,7 @@ import {
   PuzzleSchema,
   PuzzleWithHtml,
 } from '@/types/puzzle';
+
 import { mdToHtml } from './markdown';
 
 export const getIndexData = async (): Promise<IndexData> => {

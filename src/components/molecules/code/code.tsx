@@ -1,6 +1,7 @@
-import { Highlight, themes } from 'prism-react-renderer';
-import { Props } from './code.types';
 import clsx from 'clsx';
+import { Highlight, themes } from 'prism-react-renderer';
+
+import { Props } from './code.types';
 
 export const Code = ({ code }: Props) => (
   <Highlight theme={themes.synthwave84} code={code} language="ts">

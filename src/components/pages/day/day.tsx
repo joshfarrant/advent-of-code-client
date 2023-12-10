@@ -1,12 +1,13 @@
+import { Fragment } from 'react';
 import { Tab } from '@headlessui/react';
-import { Props } from './day.types';
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/20/solid';
+import clsx from 'clsx';
 import { NextSeo } from 'next-seo';
+
 import { Code } from '@/components/molecules/code';
 import { Layout } from '@/components/templates/layout';
-import { Fragment } from 'react';
-import clsx from 'clsx';
-import Link from 'next/link';
-import { ArrowTopRightOnSquareIcon } from '@heroicons/react/20/solid';
+
+import { Props } from './day.types';
 
 export const Day = ({
   day,
