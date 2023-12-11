@@ -1,6 +1,6 @@
 {
   "meta": {
-    "createdAt": 1702203170329
+    "createdAt": 1702294446563
   },
   "data": [
     {
@@ -12,6 +12,11 @@
       "day": 2,
       "title": "Cube Conundrum",
       "file": "2.json"
+    },
+    {
+      "day": 3,
+      "title": "Gear Ratios",
+      "file": "3.json"
     },
     {
       "day": 4,
