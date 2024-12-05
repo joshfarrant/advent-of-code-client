@@ -1,14 +1,14 @@
 {
   "meta": {
-    "createdAt": 1702294446563
+    "createdAt": 1733398737586
   },
   "puzzle": {
     "day": 1,
-    "title": "Trebuchet?!"
+    "title": "Historian Hysteria"
   },
-  "notes": "Part 1 of this was relatively straight-forward, however part 2 added some complications.\n\nMy first solution to part 2 would replace all occurences of spelled out numbers (one, two, three, etc) with the numeric version using something like this.\n\n```ts\nstr.replace(/(one|two|three|etc)/g, getDigit);\n```\n\nHowever this caused issues in cases where the string ended with a pair of spelled out numbers which shared a end/start character, for example _twone_, _oneight_. In these cases, the string would be read left-to-right, so the first number would be replaced, thus breaking the second number. So _twone_ would become _2ne_ and _oneight_ would become _1ight_, which would result in an incorrect total.\n\nI considered an approach where I would read the string backwards and replace occurences of reversed spelled out numbers, eg _eno_, _owt_, etc, however this felt messy and I was sure there was a better way. It turns out there's not really a nice way of doing it, and in the end I had to seek out a hint from the subreddit.\n",
+  "notes": "",
   "solutions": {
-    "part1": "import { map, pipe, replace, split, sum } from 'rambda';\n\nconst getFirstAndLastChar = (x: string): string => `${x.at(0)}${x.at(-1)}`;\nconst removeLetters = replace(/[a-z]/gi, '');\nconst splitLines = split('\\n');\n\nexport default pipe(\n  removeLetters,\n  splitLines,\n  map(getFirstAndLastChar),\n  map(Number),\n  sum,\n);\n",
-    "part2": "import { map, pipe, replace, split, sum, tap } from 'rambda';\n\nconst firstAndLastChar = (x: string): string => `${x.at(0)}${x.at(-1)}`;\nconst removeLetters = replace(/[a-z]/gi, '');\nconst splitLines = split('\\n');\n\n/**\n * Used for handling cases where multiple spelled out numbers share a start/end\n * character. For example: oneight, twone, sevenineight.\n */\nconst replaceNumberWords = pipe(\n  replace(/(one)/gi, 'o1e'),\n  replace(/(two)/gi, 't2o'),\n  replace(/(three)/gi, 't3e'),\n  replace(/(four)/gi, 'f4r'),\n  replace(/(five)/gi, 'f5e'),\n  replace(/(six)/gi, 's6x'),\n  replace(/(seven)/gi, 's7n'),\n  replace(/(eight)/gi, 'e8t'),\n  replace(/(nine)/gi, 'n9e'),\n);\n\nexport default pipe(\n  replaceNumberWords,\n  removeLetters,\n  splitLines,\n  map(firstAndLastChar),\n  map(Number),\n  sum,\n);\n"
+    "part1": "export default (input: string): number => {\n  const lines = input.split('\\n');\n  const { x, y } = lines.reduce(\n    (acc, line) => {\n      const [a, b] = line.split('   ');\n\n      acc.x.push(Number(a));\n      acc.y.push(Number(b));\n\n      return acc;\n    },\n    { x: [], y: [] } as { x: number[]; y: number[] },\n  );\n\n  const sortedX = x.sort((a, b) => a - b);\n  const sortedY = y.sort((a, b) => a - b);\n\n  return sortedX.reduce(\n    (acc, _, i) => acc + Math.abs(sortedX[i] - sortedY[i]),\n    0,\n  );\n};\n",
+    "part2": "export default (input: string): number => {\n  const lines = input.split('\\n');\n  const { x, y } = lines.reduce(\n    (acc, line) => {\n      const [a, b] = line.split('   ');\n\n      acc.x.push(Number(a));\n      acc.y.push(Number(b));\n\n      return acc;\n    },\n    { x: [], y: [] } as { x: number[]; y: number[] },\n  );\n\n  const sortedX = x.sort((a, b) => a - b);\n\n  const yFrequency = y.reduce((acc, y) => {\n    acc[y] = (acc[y] || 0) + 1;\n\n    return acc;\n  }, {} as Record<number, number>);\n\n  return sortedX.reduce((acc, x) => acc + x * (yFrequency[x] ?? 0), 0);\n};\n"
   }
 }
