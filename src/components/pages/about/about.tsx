@@ -34,7 +34,7 @@ export const About = () => {
               each one. My solutions are written in TypeScript, and are
               available on{' '}
               <a
-                href="https://github.com/joshfarrant/advent-of-code-2024"
+                href="https://github.com/joshfarrant/advent-of-code"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gradient whitespace-nowrap font-semibold"
