@@ -19,12 +19,12 @@ export const About = () => {
             <p>
               This is a little site I created to share my solutions to the{' '}
               <a
-                href="https://adventofcode.com/2023"
+                href="https://adventofcode.com/2024"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gradient  font-semibold"
               >
-                Advent of Code 2023
+                Advent of Code 2024
               </a>{' '}
               puzzles, and hopefully help me commit to completing all 25 days.
             </p>
@@ -34,7 +34,7 @@ export const About = () => {
               each one. My solutions are written in TypeScript, and are
               available on{' '}
               <a
-                href="https://github.com/joshfarrant/advent-of-code-2023"
+                href="https://github.com/joshfarrant/advent-of-code-2024"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gradient whitespace-nowrap font-semibold"

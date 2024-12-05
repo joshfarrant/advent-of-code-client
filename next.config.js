@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   redirects: () => [
-    { source: '/', destination: '/2023/days', permanent: false },
+    { source: '/', destination: '/2024/days', permanent: false },
   ],
 };
 

@@ -8,14 +8,14 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <NextSeo
         titleTemplate="%s | Josh Farrant"
-        canonical="https://advent-of-code.farrant.me/2023/days"
+        canonical="https://advent-of-code.farrant.me/2024/days"
         themeColor="#f472b6"
         openGraph={{
           type: 'website',
           siteName: 'Farrant.me',
-          url: 'https://advent-of-code.farrant.me/2023/days',
-          title: 'Josh Farrant — Advent of Code 2023',
-          description: 'View my solutions to Advent of Code 2023 puzzles.',
+          url: 'https://advent-of-code.farrant.me/2024/days',
+          title: 'Josh Farrant — Advent of Code 2024',
+          description: 'View my solutions to Advent of Code 2024 puzzles.',
           images: [
             {
               url: 'https://advent-of-code.farrant.me/img/preview.png',

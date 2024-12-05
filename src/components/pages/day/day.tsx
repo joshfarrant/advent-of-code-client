@@ -20,8 +20,8 @@ export const Day = ({
     <>
       <NextSeo
         title={`Day ${day}`}
-        description={`My solution to day ${day} of Advent of Code 2023.`}
-        canonical={`https://advent-of-code.farrant.me/2023/days/${day}`}
+        description={`My solution to day ${day} of Advent of Code 2024.`}
+        canonical={`https://advent-of-code.farrant.me/2024/days/${day}`}
       />
       <Layout>
         <div className="mt-4 grid h-full grid-cols-1 sm:mt-6 lg:grid-cols-[minmax(25rem,_42rem)_minmax(25rem,_53rem)] lg:gap-6 xl:gap-8 2xl:gap-16">
@@ -31,7 +31,7 @@ export const Day = ({
               <span className="text-gradient font-bold">{title}</span>
             </h2>
             <a
-              href={`https://adventofcode.com/2023/day/${day}`}
+              href={`https://adventofcode.com/2024/day/${day}`}
               className="mt-2 flex max-w-2xl items-center text-xl font-semibold text-gray-900 decoration-secondary-400 hover:underline"
               target="_blank"
               rel="noopener noreferrer"

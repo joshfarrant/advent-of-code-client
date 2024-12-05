@@ -8,7 +8,7 @@ export const Layout = ({ children }: Props) => {
       <nav className="sticky top-0 z-20 mx-auto mb-3 w-full max-w-[42rem] bg-white sm:mb-5 sm:pt-4 lg:static lg:max-w-[99rem] lg:pt-8">
         <div className="text-gradient mb-2 flex flex-row items-center justify-between px-3 pt-2 sm:mb-4 sm:pt-0 lg:px-4">
           <Link
-            href="/2023/days"
+            href="/2024/days"
             className="mr-1 flex flex-col items-start whitespace-nowrap bg-clip-text text-xl font-medium tracking-tight hover:bg-secondary-600 sm:text-3xl lg:flex-row lg:items-center"
           >
             <h1>Josh Farrant</h1>
@@ -16,7 +16,7 @@ export const Layout = ({ children }: Props) => {
               /
             </span>
             <h2 className="bg-clip-text text-sm font-light hover:bg-secondary-600 sm:text-xl lg:text-3xl">
-              Advent of Code <span className="hidden sm:inline">2023</span>
+              Advent of Code <span className="hidden sm:inline">2024</span>
             </h2>
           </Link>
           <div className="text-md flex flex-row flex-wrap items-end space-x-3 font-semibold tracking-tight sm:space-x-5 sm:text-lg">
@@ -25,7 +25,7 @@ export const Layout = ({ children }: Props) => {
             </Link>
             <Link
               className="bg-clip-text hover:bg-primary-400"
-              href="/2023/days"
+              href="/2024/days"
             >
               Advent Calendar
             </Link>

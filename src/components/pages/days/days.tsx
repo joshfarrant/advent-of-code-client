@@ -14,20 +14,20 @@ export const Days = ({ days }: Props) => {
     <>
       <NextSeo
         title="Advent Calendar"
-        description="View my solutions to Advent of Code 2023 puzzles."
-        canonical="https://advent-of-code.farrant.me/2023/days"
+        description="View my solutions to Advent of Code 2024 puzzles."
+        canonical="https://advent-of-code.farrant.me/2024/days"
       />
       <Layout>
         <div className="flex w-full max-w-[42rem] flex-col lg:max-w-[99rem]">
           <p className="mt-2 max-w-2xl text-xl text-gray-900">
             Pick a day to view my solutions to an{' '}
             <a
-              href="https://adventofcode.com/2023"
+              href="https://adventofcode.com/2024"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gradient font-semibold"
             >
-              Advent of Code 2023
+              Advent of Code 2024
             </a>{' '}
             puzzle.
           </p>
@@ -49,7 +49,7 @@ export const Days = ({ days }: Props) => {
                 >
                   {hasDay ? (
                     <Link
-                      href={`/2023/days/${dayNumber}`}
+                      href={`/2024/days/${dayNumber}`}
                       className="text-gradient-light h-full w-full opacity-80"
                       tabIndex={0}
                     >
