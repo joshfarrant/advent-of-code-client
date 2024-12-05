@@ -62,7 +62,7 @@ export const Layout = ({ children }: Props) => {
           <li>
             <a
               className="bg-clip-text hover:bg-primary-400"
-              href="https://farrant.me/posts"
+              href="https://farrant.me"
               target="_blank"
               rel="noopener noreferrer"
             >

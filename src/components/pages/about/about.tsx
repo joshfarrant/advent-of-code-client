@@ -47,7 +47,7 @@ export const About = () => {
             <p>
               You can find me at{' '}
               <a
-                href="https://farrant.me/posts"
+                href="https://farrant.me"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gradient whitespace-nowrap font-semibold"
