@@ -1,0 +1,14 @@
+{
+  "meta": {
+    "createdAt": 1733755854367
+  },
+  "puzzle": {
+    "day": 7,
+    "title": "Bridge Repair"
+  },
+  "notes": "",
+  "solutions": {
+    "part1": "const add = (a: number, b: number) => a + b;\nconst multiply = (a: number, b: number) => a * b;\n\nconst operators = [add, multiply];\n\nconst evaluateExpression = (values: number[], target: number): boolean => {\n  if (values.length === 1) {\n    return values[0] === target;\n  }\n\n  const [a, b, ...rest] = values;\n\n  for (const operator of operators) {\n    const nextValues = [operator(a, b), ...rest];\n\n    if (evaluateExpression(nextValues, target)) {\n      return true;\n    }\n  }\n\n  return false;\n};\n\nexport default (input: string): number => {\n  return input\n    .split('\\n')\n    .map<number>(line => {\n      const [targetString, valuesString] = line.split(': ');\n      const target = Number(targetString);\n      const values = valuesString.split(' ').map(Number);\n\n      return evaluateExpression(values, target) ? target : 0;\n    })\n    .reduce(add, 0);\n};\n",
+    "part2": "const add = (a: number, b: number) => a + b;\nconst multiply = (a: number, b: number) => a * b;\nconst concat = (a: number, b: number) => Number(`${a}${b}`);\n\nconst operators = [add, multiply, concat];\n\nconst evaluateExpression = (values: number[], target: number): boolean => {\n  const [a, b, ...rest] = values;\n\n  if (values.length === 1) {\n    return a === target;\n  }\n\n  if (a > target) {\n    return false;\n  }\n\n  for (const operator of operators) {\n    const nextValues = [operator(a, b), ...rest];\n\n    if (evaluateExpression(nextValues, target)) {\n      return true;\n    }\n  }\n\n  return false;\n};\n\nexport default (input: string): number => {\n  return input\n    .split('\\n')\n    .map<number>(line => {\n      const [targetString, valuesString] = line.split(': ');\n      const target = Number(targetString);\n      const values = valuesString.split(' ').map(Number);\n\n      return evaluateExpression(values, target) ? target : 0;\n    })\n    .reduce(add, 0);\n};\n"
+  }
+}

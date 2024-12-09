@@ -1,6 +1,6 @@
 {
   "meta": {
-    "createdAt": 1733398737586
+    "createdAt": 1733755854367
   },
   "data": [
     {
@@ -27,6 +27,21 @@
       "day": 5,
       "title": "Print Queue",
       "file": "5.json"
+    },
+    {
+      "day": 6,
+      "title": "Guard Gallivant",
+      "file": "6.json"
+    },
+    {
+      "day": 7,
+      "title": "Bridge Repair",
+      "file": "7.json"
+    },
+    {
+      "day": 8,
+      "title": "Resonant Collinearity",
+      "file": "8.json"
     }
   ]
 }
