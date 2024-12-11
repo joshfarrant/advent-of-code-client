@@ -1,6 +1,6 @@
 {
   "meta": {
-    "createdAt": 1733755854367
+    "createdAt": 1733932087245
   },
   "data": [
     {
@@ -42,6 +42,21 @@
       "day": 8,
       "title": "Resonant Collinearity",
       "file": "8.json"
+    },
+    {
+      "day": 9,
+      "title": "Disk Fragmenter",
+      "file": "9.json"
+    },
+    {
+      "day": 10,
+      "title": "Hoof It",
+      "file": "10.json"
+    },
+    {
+      "day": 11,
+      "title": "Plutonian Pebbles",
+      "file": "11.json"
     }
   ]
 }
