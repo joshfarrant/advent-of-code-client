@@ -19,14 +19,14 @@ export const About = () => {
             <p>
               This is a little site I created to share my solutions to the{' '}
               <a
-                href="https://adventofcode.com/2024"
+                href="https://adventofcode.com/2025"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gradient  font-semibold"
               >
-                Advent of Code 2024
+                Advent of Code 2025
               </a>{' '}
-              puzzles, and hopefully help me commit to completing all 25 days.
+              puzzles, and hopefully help me commit to completing all 12 days.
             </p>
 
             <p>
@@ -54,14 +54,14 @@ export const About = () => {
               >
                 farrant.me
               </a>
-              , or on Mastodon at{' '}
+              , or on Bluesky at{' '}
               <a
-                href="https://mastodon.social/@farrant"
+                href="https://bsky.app/profile/farrant.me"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gradient whitespace-nowrap font-semibold"
               >
-                @farrant@mastodon.social
+                @farrant.me
               </a>
             </p>
           </div>
