@@ -7,7 +7,7 @@ import { Layout } from '@/components/templates/layout';
 
 import { Props } from './days.types';
 
-const emptyDays = Array.from({ length: 25 });
+const emptyDays = Array.from({ length: 12 });
 
 export const Days = ({ days }: Props) => {
   return (
@@ -32,7 +32,7 @@ export const Days = ({ days }: Props) => {
             puzzle.
           </p>
 
-          <ul className="grid grid-cols-2 gap-8 pb-8 pt-6 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-7">
+          <ul className="grid grid-cols-2 gap-8 pb-8 pt-6 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
             {emptyDays.map((_, i) => {
               const dayNumber = i + 1;
               const hasDay = days.findIndex(d => d.day === dayNumber) > -1;
