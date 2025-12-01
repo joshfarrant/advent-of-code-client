@@ -1,14 +1,14 @@
 {
   "meta": {
-    "createdAt": 1764579151852
+    "createdAt": 1764585531872
   },
   "puzzle": {
     "day": 1,
-    "title": "Historian Hysteria"
+    "title": "Secret Entrance"
   },
   "notes": "",
   "solutions": {
-    "part1": "export default (input: string): number => {\n  const lines = input.split('\\n');\n  const { x, y } = lines.reduce(\n    (acc, line) => {\n      const [a, b] = line.split('   ');\n\n      acc.x.push(Number(a));\n      acc.y.push(Number(b));\n\n      return acc;\n    },\n    { x: [], y: [] } as { x: number[]; y: number[] },\n  );\n\n  const sortedX = x.sort((a, b) => a - b);\n  const sortedY = y.sort((a, b) => a - b);\n\n  return sortedX.reduce(\n    (acc, _, i) => acc + Math.abs(sortedX[i] - sortedY[i]),\n    0,\n  );\n};\n",
-    "part2": "export default (input: string): number => {\n  const lines = input.split('\\n');\n  const { x, y } = lines.reduce(\n    (acc, line) => {\n      const [a, b] = line.split('   ');\n\n      acc.x.push(Number(a));\n      acc.y.push(Number(b));\n\n      return acc;\n    },\n    { x: [], y: [] } as { x: number[]; y: number[] },\n  );\n\n  const sortedX = x.sort((a, b) => a - b);\n\n  const yFrequency = y.reduce((acc, y) => {\n    acc[y] = (acc[y] || 0) + 1;\n\n    return acc;\n  }, {} as Record<number, number>);\n\n  return sortedX.reduce((acc, x) => acc + x * (yFrequency[x] ?? 0), 0);\n};\n"
+    "part1": "export default (input: string): number => {\n  const lines = input.split('\\n');\n  let currentValue = 50;\n  let zeroesCount = 0;\n\n  for (const line of lines) {\n    const direction = line.substring(0, 1) === 'R' ? 1 : -1;\n    const number = parseInt(line.substring(1));\n\n    const nextValue = currentValue + direction * number;\n    currentValue = ((nextValue % 100) + 100) % 100;\n\n    if (currentValue === 0) {\n      zeroesCount += 1;\n    }\n  }\n\n  return zeroesCount;\n};\n",
+    "part2": "const mod = (number: number, max: number): number =>\n  ((number % max) + max) % max;\n\nexport default (input: string): number => {\n  const lines = input.split('\\n');\n  let currentValue = 50;\n  let zeroesCount = 0;\n\n  for (const line of lines) {\n    const direction = line.substring(0, 1);\n    const number = parseInt(line.substring(1));\n\n    if (direction === 'R') {\n      currentValue += number;\n      zeroesCount += Math.floor(currentValue / 100);\n      currentValue %= 100;\n    } else {\n      zeroesCount += Math.floor(number / 100);\n      if (currentValue !== 0 && number % 100 >= currentValue) {\n        zeroesCount += 1;\n      }\n      currentValue = mod(currentValue - number, 100);\n    }\n  }\n\n  return zeroesCount;\n};\n"
   }
 }

@@ -1,72 +1,12 @@
 {
   "meta": {
-    "createdAt": 1764579151852
+    "createdAt": 1764585531872
   },
   "data": [
     {
       "day": 1,
-      "title": "Historian Hysteria",
+      "title": "Secret Entrance",
       "file": "1.json"
-    },
-    {
-      "day": 2,
-      "title": "Red-Nosed Reports",
-      "file": "2.json"
-    },
-    {
-      "day": 3,
-      "title": "Mull It Over",
-      "file": "3.json"
-    },
-    {
-      "day": 4,
-      "title": "Ceres Search",
-      "file": "4.json"
-    },
-    {
-      "day": 5,
-      "title": "Print Queue",
-      "file": "5.json"
-    },
-    {
-      "day": 6,
-      "title": "Guard Gallivant",
-      "file": "6.json"
-    },
-    {
-      "day": 7,
-      "title": "Bridge Repair",
-      "file": "7.json"
-    },
-    {
-      "day": 8,
-      "title": "Resonant Collinearity",
-      "file": "8.json"
-    },
-    {
-      "day": 9,
-      "title": "Disk Fragmenter",
-      "file": "9.json"
-    },
-    {
-      "day": 10,
-      "title": "Hoof It",
-      "file": "10.json"
-    },
-    {
-      "day": 11,
-      "title": "Plutonian Pebbles",
-      "file": "11.json"
-    },
-    {
-      "day": 12,
-      "title": "Garden Groups",
-      "file": "12.json"
-    },
-    {
-      "day": 13,
-      "title": "Claw Contraption",
-      "file": "13.json"
     }
   ]
 }
