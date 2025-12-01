@@ -1,6 +1,6 @@
 {
   "meta": {
-    "createdAt": 1733932087245
+    "createdAt": 1764579151852
   },
   "data": [
     {
@@ -57,6 +57,16 @@
       "day": 11,
       "title": "Plutonian Pebbles",
       "file": "11.json"
+    },
+    {
+      "day": 12,
+      "title": "Garden Groups",
+      "file": "12.json"
+    },
+    {
+      "day": 13,
+      "title": "Claw Contraption",
+      "file": "13.json"
     }
   ]
 }
