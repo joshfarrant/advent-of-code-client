@@ -1,12 +1,17 @@
 {
   "meta": {
-    "createdAt": 1764585531872
+    "createdAt": 1764669220298
   },
   "data": [
     {
       "day": 1,
       "title": "Secret Entrance",
       "file": "1.json"
+    },
+    {
+      "day": 2,
+      "title": "Gift Shop",
+      "file": "2.json"
     }
   ]
 }
