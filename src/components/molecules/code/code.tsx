@@ -4,7 +4,7 @@ import { Highlight, themes } from 'prism-react-renderer';
 import { Props } from './code.types';
 
 export const Code = ({ code }: Props) => (
-  <Highlight theme={themes.synthwave84} code={code} language="ts">
+  <Highlight theme={themes.vsDark} code={code} language="ts">
     {({ className, style, tokens, getLineProps, getTokenProps }) => (
       <pre
         className={clsx(className, 'overflow-x-auto')}
