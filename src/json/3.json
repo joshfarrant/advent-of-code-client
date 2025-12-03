@@ -1,0 +1,14 @@
+{
+  "meta": {
+    "createdAt": 1764766231339
+  },
+  "puzzle": {
+    "day": 3,
+    "title": "Lobby"
+  },
+  "notes": "It's always nice when part two gives you a solution which will also work with part one. In this case we could use `getJoltage(2)` in part one and `getJoltage(12)` in part two.\n",
+  "solutions": {
+    "part1": "export default (input: string): number => {\n  const lines = input.split('\\n');\n  let total = 0;\n\n  for (const line of lines) {\n    let highestValue = 0;\n\n    for (let i = 0; i < line.length - 1; i++) {\n      const startChar = line[i];\n\n      for (let j = i + 1; j < line.length; j++) {\n        const endChar = line[j];\n        const value = Number(`${startChar}${endChar}`);\n\n        if (value > highestValue) {\n          highestValue = value;\n        }\n      }\n    }\n\n    total += highestValue;\n  }\n\n  return total;\n};\n",
+    "part2": "// Returns the index of the first occurrance of the highest number in a string\nconst getFirstHighestNumberIndex = (line: string): number => {\n  let highestValue = 0;\n  let highestValueIdx = 0;\n\n  for (let i = 0; i < line.length; i++) {\n    const value = Number(line[i]);\n\n    // We can't do better than a 9, so return early\n    if (value === 9) return i;\n\n    if (value > highestValue) {\n      highestValue = value;\n      highestValueIdx = i;\n    }\n  }\n\n  return highestValueIdx;\n};\n\nconst getJoltage =\n  (length: number) =>\n  (line: string): number => {\n    let joltage = '';\n    let remainingLine = line;\n\n    for (let i = length - 1; i >= 0; i--) {\n      /**\n       * The last `i` characters in the string are off-limits as we need to make\n       * sure there are enough remaining characters to complete the string.\n       */\n      const partialLine =\n        i === 0 ? remainingLine : remainingLine.slice(0, -1 * i);\n      const idx = getFirstHighestNumberIndex(partialLine);\n\n      joltage += partialLine[idx];\n      remainingLine = remainingLine.slice(idx + 1);\n    }\n\n    return Number(joltage);\n  };\n\nconst getJoltage12 = getJoltage(12);\n\nexport default (input: string): number =>\n  input.split('\\n').reduce((total, line) => total + getJoltage12(line), 0);\n"
+  }
+}
