@@ -1,0 +1,14 @@
+{
+  "meta": {
+    "createdAt": 1764928354586
+  },
+  "puzzle": {
+    "day": 5,
+    "title": "Cafeteria"
+  },
+  "notes": "Part 2 had me stumped for a little while.\n\nOf course, the first thing I tried with part 2 was to iterate through each of the ranges and push each id into a `Set`. Unsurprisingly, I ran out of memory pretty quickly.\n\nMy next solution was pretty close to my final solution and, frustratingly, it passed with the example input but gave me the wrong answer for the actualy input. After some debugging — and the suggestion to amend my example input with `9-21` — I realised that I wasn't handling cases where one range was entirely contained within another range that I'd already processed. Fixing that bug gave me the correct answer.\n\nIn the end this one wasn't too bad, but I do wish 9-21 was part of the puzzles example input!\n",
+  "solutions": {
+    "part1": "type Range = [number, number];\n\nconst isFresh =\n  (ranges: Range[]) =>\n  (id: number): boolean =>\n    ranges.some(([rangeFrom, rangeTo]) => id >= rangeFrom && id <= rangeTo);\n\nexport default (input: string): number => {\n  const lists = input.split('\\n\\n').map(x => x.split('\\n'));\n\n  const freshRanges = lists[0].map(range =>\n    range.split('-').map(Number),\n  ) as Range[];\n  const availableIds = lists[1].map(Number);\n\n  const isFreshRange = isFresh(freshRanges);\n\n  return availableIds.filter(isFreshRange).length;\n};\n",
+    "part2": "type Range = [number, number];\n\nexport default (input: string): number => {\n  const lists = input.split('\\n\\n').map(x => x.split('\\n'));\n\n  const freshRanges = lists[0]\n    .map(range => range.split('-').map(Number))\n    .sort((a, b) => a[0] - b[0]) as Range[];\n\n  const combinedRanges: Range[] = [];\n\n  for (const range of freshRanges) {\n    if (combinedRanges.length === 0) {\n      combinedRanges.push(range);\n      continue;\n    }\n\n    const prevCombinedRange = combinedRanges.at(-1)!;\n\n    const startIsInRange = range[0] <= prevCombinedRange[1];\n    if (startIsInRange) {\n      const endIsInRange = range[1] <= prevCombinedRange[1];\n      if (endIsInRange) continue;\n      prevCombinedRange[1] = range[1];\n    } else {\n      combinedRanges.push(range);\n    }\n  }\n\n  return combinedRanges.reduce(\n    (total, range) => total + (range[1] - range[0]) + 1,\n    0,\n  );\n};\n"
+  }
+}
