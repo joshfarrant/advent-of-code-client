@@ -1,6 +1,6 @@
 {
   "meta": {
-    "createdAt": 1764928354586
+    "createdAt": 1765014972902
   },
   "data": [
     {
@@ -27,6 +27,11 @@
       "day": 5,
       "title": "Cafeteria",
       "file": "5.json"
+    },
+    {
+      "day": 6,
+      "title": "Trash Compactor",
+      "file": "6.json"
     }
   ]
 }
